@@ -14,6 +14,10 @@
 		B39657181D6AF3390014E1B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B39657161D6AF3390014E1B2 /* LaunchScreen.storyboard */; };
 		B39657231D6AF3390014E1B2 /* UniPagerHeaderControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39657221D6AF3390014E1B2 /* UniPagerHeaderControllerTests.swift */; };
 		B396572E1D6AF3390014E1B2 /* UniPagerHeaderControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396572D1D6AF3390014E1B2 /* UniPagerHeaderControllerUITests.swift */; };
+		B396573D1D6AF5B60014E1B2 /* UniHeaderToolPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396573C1D6AF5B60014E1B2 /* UniHeaderToolPanel.swift */; };
+		B396573F1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B396573E1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib */; };
+		B39657451D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B39657421D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m */; };
+		B39657461D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B39657441D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,13 @@
 		B39657291D6AF3390014E1B2 /* UniPagerHeaderControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniPagerHeaderControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B396572D1D6AF3390014E1B2 /* UniPagerHeaderControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniPagerHeaderControllerUITests.swift; sourceTree = "<group>"; };
 		B396572F1D6AF3390014E1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B396573C1D6AF5B60014E1B2 /* UniHeaderToolPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniHeaderToolPanel.swift; sourceTree = "<group>"; };
+		B396573E1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniHeaderToolPanel.xib; sourceTree = "<group>"; };
+		B39657411D6B05590014E1B2 /* CSStickyHeaderFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSStickyHeaderFlowLayout.h; sourceTree = "<group>"; };
+		B39657421D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSStickyHeaderFlowLayout.m; sourceTree = "<group>"; };
+		B39657431D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSStickyHeaderFlowLayoutAttributes.h; sourceTree = "<group>"; };
+		B39657441D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSStickyHeaderFlowLayoutAttributes.m; sourceTree = "<group>"; };
+		B39657491D6B058C0014E1B2 /* swift-briding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift-briding.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +108,14 @@
 		B396570C1D6AF3390014E1B2 /* UniPagerHeaderController */ = {
 			isa = PBXGroup;
 			children = (
+				B396573B1D6AF5580014E1B2 /* Classes */,
 				B396570D1D6AF3390014E1B2 /* AppDelegate.swift */,
 				B396570F1D6AF3390014E1B2 /* ViewController.swift */,
 				B39657111D6AF3390014E1B2 /* Main.storyboard */,
 				B39657141D6AF3390014E1B2 /* Assets.xcassets */,
 				B39657161D6AF3390014E1B2 /* LaunchScreen.storyboard */,
 				B39657191D6AF3390014E1B2 /* Info.plist */,
+				B39657491D6B058C0014E1B2 /* swift-briding.h */,
 			);
 			path = UniPagerHeaderController;
 			sourceTree = "<group>";
@@ -123,6 +136,27 @@
 				B396572F1D6AF3390014E1B2 /* Info.plist */,
 			);
 			path = UniPagerHeaderControllerUITests;
+			sourceTree = "<group>";
+		};
+		B396573B1D6AF5580014E1B2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B39657401D6B05590014E1B2 /* CSSStickyHeaderFlowLayout */,
+				B396573C1D6AF5B60014E1B2 /* UniHeaderToolPanel.swift */,
+				B396573E1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B39657401D6B05590014E1B2 /* CSSStickyHeaderFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B39657411D6B05590014E1B2 /* CSStickyHeaderFlowLayout.h */,
+				B39657421D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m */,
+				B39657431D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.h */,
+				B39657441D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m */,
+			);
+			path = CSSStickyHeaderFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +265,7 @@
 			files = (
 				B39657181D6AF3390014E1B2 /* LaunchScreen.storyboard in Resources */,
 				B39657151D6AF3390014E1B2 /* Assets.xcassets in Resources */,
+				B396573F1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib in Resources */,
 				B39657131D6AF3390014E1B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39657101D6AF3390014E1B2 /* ViewController.swift in Sources */,
+				B39657451D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m in Sources */,
+				B39657461D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
 				B396570E1D6AF3390014E1B2 /* AppDelegate.swift in Sources */,
+				B396573D1D6AF5B60014E1B2 /* UniHeaderToolPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.unigreen.agricola.UniPagerHeaderController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UniPagerHeaderController/swift-briding.h";
 			};
 			name = Debug;
 		};
@@ -414,6 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.unigreen.agricola.UniPagerHeaderController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UniPagerHeaderController/swift-briding.h";
 			};
 			name = Release;
 		};
