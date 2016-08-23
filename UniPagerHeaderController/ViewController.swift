@@ -12,15 +12,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView : UICollectionView!
     
+    private var stickyHeader : UniHeaderToolPanel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = .None
         reloadLayout()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.registerNib(UINib(nibName: "UniHeaderToolPanel", bundle: nil), forSupplementaryViewOfKind: CSStickyHeaderParallaxHeader, withReuseIdentifier: UniHeaderToolPanel.headerIdentifier)
-        collectionView.registerClass(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
+        collectionView.registerNib(UINib(nibName: "ItemCell",  bundle: nil), forCellWithReuseIdentifier: ItemCell.cellIdentifier)
+        collectionView.registerNib(UINib(nibName: "ItemCell", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ItemCell.headerIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,21 +49,37 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         if kind == CSStickyHeaderParallaxHeader {
-            let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: UniHeaderToolPanel.headerIdentifier, forIndexPath: indexPath)
+            if stickyHeader == nil {
+                let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: UniHeaderToolPanel.headerIdentifier, forIndexPath: indexPath) as! UniHeaderToolPanel
+                stickyHeader = header
+            }
             
+            return stickyHeader!
+        } else if kind == UICollectionElementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: ItemCell.headerIdentifier, forIndexPath: indexPath) as! ItemCell
             return header
         }
         return UICollectionReusableView()
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ItemCell.cellIdentifier, forIndexPath: indexPath)
+        cell.backgroundColor = UIColor.grayColor()
         return cell
+    }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: CGRectGetWidth(collectionView.frame), height : 40)
+//    }
+    
+    //MARK: - UIScrollViewDelegate
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        stickyHeader?.updateMatchNumber(by: scrollView.contentOffset)
     }
 }
 

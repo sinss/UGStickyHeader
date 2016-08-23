@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemCell" customModule="UniPagerHeaderController" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The primal baree" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Who-fy-Ivg">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="16"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Who-fy-Ivg" secondAttribute="bottom" id="4Mo-hk-65E"/>
+                <constraint firstItem="Who-fy-Ivg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OTr-qh-sCI"/>
+                <constraint firstItem="Who-fy-Ivg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZlH-L9-Ds1"/>
+                <constraint firstAttribute="trailing" secondItem="Who-fy-Ivg" secondAttribute="trailing" id="krV-BG-rkz"/>
+            </constraints>
+            <point key="canvasLocation" x="119" y="328"/>
+        </collectionViewCell>
+    </objects>
+</document>
