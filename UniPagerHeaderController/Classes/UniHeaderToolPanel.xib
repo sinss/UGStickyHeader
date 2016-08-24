@@ -36,31 +36,69 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="30K-UJ-TgY">
-                        <rect key="frame" x="262" y="211" width="50" height="50"/>
+                        <rect key="frame" x="262" y="168" width="50" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                         <state key="normal" title="+">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VUl-H1-aNQ">
-                        <rect key="frame" x="110" y="156.5" width="100" height="135.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="50"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="geF-2B-hM8">
-                        <rect key="frame" x="8" y="211" width="84" height="50"/>
+                        <rect key="frame" x="8" y="168" width="84" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Primal Baree" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x1i-Aa-XIH">
-                        <rect key="frame" x="17" y="257" width="285" height="43"/>
+                        <rect key="frame" x="17" y="230" width="285" height="43"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="nTC-et-hM6">
+                        <rect key="frame" x="8" y="260" width="64" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                        <state key="normal" title="General">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPressed:" destination="2ni-lS-8Rk" eventType="touchUpInside" id="eg0-c8-feb"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="RFF-ms-QFX">
+                        <rect key="frame" x="104" y="260" width="109" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                        <state key="normal" title="Relationship">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPressed:" destination="2ni-lS-8Rk" eventType="touchUpInside" id="cWE-rm-2Go"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="bQq-Lr-0KQ">
+                        <rect key="frame" x="222" y="258" width="61" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                        <state key="normal" title="Career">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonPressed:" destination="2ni-lS-8Rk" eventType="touchUpInside" id="wPM-Tg-0Nm"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" id="lhJ-Rt-Tix">
+                        <rect key="frame" x="5" y="298" width="138" height="2"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VUl-H1-aNQ">
+                        <rect key="frame" x="110" y="113" width="100" height="135.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="50"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -71,12 +109,16 @@
             <connections>
                 <outlet property="addButton" destination="30K-UJ-TgY" id="qSH-NG-WoG"/>
                 <outlet property="birthLabel" destination="Ouq-gw-DR9" id="zv9-bd-11X"/>
+                <outlet property="careerButton" destination="bQq-Lr-0KQ" id="5fg-bc-UTD"/>
+                <outlet property="generalButton" destination="nTC-et-hM6" id="Pi7-2r-Bwd"/>
+                <outlet property="indicatorLine" destination="lhJ-Rt-Tix" id="jIw-Rt-CCe"/>
                 <outlet property="matchNumberLabel" destination="VUl-H1-aNQ" id="pMd-h7-nDF"/>
                 <outlet property="matchedLabel" destination="geF-2B-hM8" id="Zbe-5z-Pxe"/>
+                <outlet property="relationshipButton" destination="RFF-ms-QFX" id="3gf-ue-yHF"/>
                 <outlet property="shareButton" destination="Tef-Pb-rw5" id="SQk-yD-xmI"/>
                 <outlet property="userNameLabel" destination="jA7-hz-ahH" id="WNj-vp-VWj"/>
             </connections>
-            <point key="canvasLocation" x="112" y="580"/>
+            <point key="canvasLocation" x="8" y="516"/>
         </collectionViewCell>
     </objects>
 </document>

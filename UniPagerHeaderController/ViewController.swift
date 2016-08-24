@@ -13,19 +13,42 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView : UICollectionView!
     
     private var stickyHeader : UniHeaderToolPanel?
+    private var contentPanel : UIScrollView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let bgImageView = UIImageView(image: UIImage(named : "lighting"))
+        bgImageView.frame = CGRect(x: 0, y: 0, width: CGRectGetWidth(UIScreen.mainScreen().bounds), height: 500)
+        view.insertSubview(bgImageView, atIndex: 0)
         
         edgesForExtendedLayout = .None
         reloadLayout()
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.whiteColor()
+        collectionView.backgroundColor = UIColor.clearColor()
         collectionView.registerNib(UINib(nibName: "UniHeaderToolPanel", bundle: nil), forSupplementaryViewOfKind: CSStickyHeaderParallaxHeader, withReuseIdentifier: UniHeaderToolPanel.headerIdentifier)
         collectionView.registerNib(UINib(nibName: "ItemCell",  bundle: nil), forCellWithReuseIdentifier: ItemCell.cellIdentifier)
         collectionView.registerNib(UINib(nibName: "ItemCell", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ItemCell.headerIdentifier)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        
+        contentPanel = UIScrollView(frame: CGRect.zero)
+        contentPanel?.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
+        contentPanel?.userInteractionEnabled = false
+        contentPanel?.contentSize = CGSize(width: view.frame.width, height: 9999)
+        
+        for i in 0..<100 {
+            let label = UILabel(frame: CGRect(x: 0, y: i * 20, width: 300, height: 20))
+            label.font = UIFont.systemFontOfSize(18)
+            label.textColor = UIColor.redColor()
+            label.text = String(i)
+            contentPanel?.addSubview(label)
+        }
+        
+        
+        view.addSubview(contentPanel!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,14 +56,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if let _ = stickyHeader {
+            collectionView.sendSubviewToBack(stickyHeader!)
+        }
+        updateLayout()
+    }
     
     private func reloadLayout() {
         if let layout = collectionView.collectionViewLayout as? CSStickyHeaderFlowLayout {
             layout.parallaxHeaderReferenceSize = CGSize(width: view.frame.width, height: UniHeaderToolPanel.controlHeight)
-            layout.parallaxHeaderMinimumReferenceSize = CGSize(width: view.frame.width, height: 110)
+            layout.parallaxHeaderMinimumReferenceSize = CGSize(width: view.frame.width, height: UniHeaderToolPanel.headerLimitHeight)
             layout.itemSize = CGSize(width: view.frame.width, height: layout.itemSize.height)
             layout.parallaxHeaderAlwaysOnTop = true
-            layout.disableStickyHeaders = true
+            layout.disableStickyHeaders = false
         }
     }
     
@@ -49,7 +79,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -69,8 +99,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ItemCell.cellIdentifier, forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.grayColor()
+        cell.backgroundColor = UIColor.clearColor()
         return cell
+        
+        //UICollectionViewDelegateFlowLayout
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 9999)
     }
     
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -80,6 +116,46 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     //MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
         stickyHeader?.updateMatchNumber(by: scrollView.contentOffset)
+        updateLayout()
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            stickyHeader?.updateMatchNumber(by: scrollView.contentOffset)
+            updateLayout()
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        stickyHeader?.updateMatchNumber(by: scrollView.contentOffset)
+        updateLayout()
+    }
+    
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+        stickyHeader?.updateMatchNumber(by: scrollView.contentOffset)
+        updateLayout()
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        stickyHeader?.updateMatchNumber(by: scrollView.contentOffset)
+        updateLayout()
+//        UIScrollViewDelegate
+    }
+    
+    //MARK: - Private
+    func updateLayout() {
+        let offset = collectionView.contentOffset.y
+        let baseY = UniHeaderToolPanel.controlHeight
+        let diff = UniHeaderToolPanel.controlHeight - UniHeaderToolPanel.headerLimitHeight
+        if offset > diff {
+            contentPanel?.frame = CGRect(x: 0, y: UniHeaderToolPanel.headerLimitHeight, width: view.frame.width, height: view.frame.height - UniHeaderToolPanel.headerLimitHeight)
+            contentPanel?.setContentOffset(CGPoint(x: 0, y: offset - diff), animated: false)
+        }
+        
+        if offset <= diff {
+            contentPanel?.frame = CGRect(x: 0, y: baseY - offset, width: view.frame.width, height: view.frame.height - UniHeaderToolPanel.headerLimitHeight)
+            contentPanel?.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        }
     }
 }
 

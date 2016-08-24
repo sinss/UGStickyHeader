@@ -20,6 +20,8 @@
 		B39657461D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = B39657441D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m */; };
 		B396574C1D6BE7AD0014E1B2 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396574A1D6BE7AD0014E1B2 /* ItemCell.swift */; };
 		B396574D1D6BE7AD0014E1B2 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B396574B1D6BE7AD0014E1B2 /* ItemCell.xib */; };
+		B39657591D6D53730014E1B2 /* UGContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39657571D6D53730014E1B2 /* UGContentCell.swift */; };
+		B396575A1D6D53730014E1B2 /* UGContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39657581D6D53730014E1B2 /* UGContentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		B39657491D6B058C0014E1B2 /* swift-briding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift-briding.h"; sourceTree = "<group>"; };
 		B396574A1D6BE7AD0014E1B2 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		B396574B1D6BE7AD0014E1B2 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		B39657571D6D53730014E1B2 /* UGContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UGContentCell.swift; sourceTree = "<group>"; };
+		B39657581D6D53730014E1B2 /* UGContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UGContentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				B396573E1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib */,
 				B396574A1D6BE7AD0014E1B2 /* ItemCell.swift */,
 				B396574B1D6BE7AD0014E1B2 /* ItemCell.xib */,
+				B39657571D6D53730014E1B2 /* UGContentCell.swift */,
+				B39657581D6D53730014E1B2 /* UGContentCell.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				B396574D1D6BE7AD0014E1B2 /* ItemCell.xib in Resources */,
 				B396573F1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib in Resources */,
 				B39657131D6AF3390014E1B2 /* Main.storyboard in Resources */,
+				B396575A1D6D53730014E1B2 /* UGContentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +309,7 @@
 				B39657451D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m in Sources */,
 				B396574C1D6BE7AD0014E1B2 /* ItemCell.swift in Sources */,
 				B39657461D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
+				B39657591D6D53730014E1B2 /* UGContentCell.swift in Sources */,
 				B396570E1D6AF3390014E1B2 /* AppDelegate.swift in Sources */,
 				B396573D1D6AF5B60014E1B2 /* UniHeaderToolPanel.swift in Sources */,
 			);

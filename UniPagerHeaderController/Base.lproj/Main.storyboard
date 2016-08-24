@@ -28,7 +28,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0nM-pa-ZAN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W4S-TV-MHo"/>
                             <constraint firstItem="0nM-pa-ZAN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZfY-Qd-EbB"/>
