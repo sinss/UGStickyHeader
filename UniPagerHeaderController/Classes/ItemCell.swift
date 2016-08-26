@@ -8,59 +8,42 @@
 
 import UIKit
 
-class ItemCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class ItemCell: UICollectionViewCell {
 
     static let cellIdentifier = "ItemCellID"
     static let headerIdentifier = "headerIdentifierID"
     
-    var currentSelectedIndex : Int = 0
-    var indicatorLineFrame = CGRect.zero
+    static var cellSize : CGSize {
+        get {
+            let width = UIScreen.mainScreen().bounds.width / 2
+            return CGSize(width: width, height: width)
+        }
+    }
+    
+    @IBOutlet weak var numberLabel : UILabel!
+    @IBOutlet weak var imgv : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        refreshButtonState()
     }
     
     override func layoutSubviews() {
-        superview?.bringSubviewToFront(self)
-    }
-    
-    //MARK: - Actions
-    @IBAction func buttonPressed(sender : UIButton) {
-        currentSelectedIndex = sender.tag
-        refreshButtonState()
+        super.layoutSubviews()
     }
 
+    func refreshImage(for index : Int) {
+        let imageName = String(format: "icon_%li", index)
+        imgv.image = UIImage(named: imageName)
+        numberLabel.text = String(index + 1)
+    }
     //MARK: - Private
     private func setupUI() {
-//        collectionView.backgroundView = nil
-//        collectionView.backgroundColor = UIColor.clearColor()
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-//        collectionView.registerNib(UINib(nibName: "UGContentCell",bundle: nil), forCellWithReuseIdentifier: UGContentCell.cellIdentifier)
+        imgv.layer.borderWidth = 1
+        imgv.layer.borderColor = UIColor.blackColor().CGColor
     }
     
     private func refreshButtonState() {
-        indicatorLineFrame = frame
-    }
-    
-    //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(UGContentCell.cellIdentifier, forIndexPath: indexPath) as! UGContentCell
         
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: frame.width, height: 1000)
     }
 }

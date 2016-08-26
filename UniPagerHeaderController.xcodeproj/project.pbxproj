@@ -22,6 +22,10 @@
 		B396574D1D6BE7AD0014E1B2 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B396574B1D6BE7AD0014E1B2 /* ItemCell.xib */; };
 		B39657591D6D53730014E1B2 /* UGContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39657571D6D53730014E1B2 /* UGContentCell.swift */; };
 		B396575A1D6D53730014E1B2 /* UGContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39657581D6D53730014E1B2 /* UGContentCell.xib */; };
+		B396575F1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396575D1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.swift */; };
+		B39657601D6E9A3B0014E1B2 /* UniStickyHeaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B396575E1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.xib */; };
+		B39657631D6E9B750014E1B2 /* UniContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39657611D6E9B750014E1B2 /* UniContentCell.swift */; };
+		B39657641D6E9B750014E1B2 /* UniContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39657621D6E9B750014E1B2 /* UniContentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		B396574B1D6BE7AD0014E1B2 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		B39657571D6D53730014E1B2 /* UGContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UGContentCell.swift; sourceTree = "<group>"; };
 		B39657581D6D53730014E1B2 /* UGContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UGContentCell.xib; sourceTree = "<group>"; };
+		B396575D1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniStickyHeaderViewController.swift; sourceTree = "<group>"; };
+		B396575E1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniStickyHeaderViewController.xib; sourceTree = "<group>"; };
+		B39657611D6E9B750014E1B2 /* UniContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniContentCell.swift; sourceTree = "<group>"; };
+		B39657621D6E9B750014E1B2 /* UniContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniContentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,10 @@
 				B396574B1D6BE7AD0014E1B2 /* ItemCell.xib */,
 				B39657571D6D53730014E1B2 /* UGContentCell.swift */,
 				B39657581D6D53730014E1B2 /* UGContentCell.xib */,
+				B39657611D6E9B750014E1B2 /* UniContentCell.swift */,
+				B39657621D6E9B750014E1B2 /* UniContentCell.xib */,
+				B396575D1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.swift */,
+				B396575E1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -277,8 +289,10 @@
 			files = (
 				B39657181D6AF3390014E1B2 /* LaunchScreen.storyboard in Resources */,
 				B39657151D6AF3390014E1B2 /* Assets.xcassets in Resources */,
+				B39657641D6E9B750014E1B2 /* UniContentCell.xib in Resources */,
 				B396574D1D6BE7AD0014E1B2 /* ItemCell.xib in Resources */,
 				B396573F1D6AF5C30014E1B2 /* UniHeaderToolPanel.xib in Resources */,
+				B39657601D6E9A3B0014E1B2 /* UniStickyHeaderViewController.xib in Resources */,
 				B39657131D6AF3390014E1B2 /* Main.storyboard in Resources */,
 				B396575A1D6D53730014E1B2 /* UGContentCell.xib in Resources */,
 			);
@@ -306,6 +320,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39657101D6AF3390014E1B2 /* ViewController.swift in Sources */,
+				B39657631D6E9B750014E1B2 /* UniContentCell.swift in Sources */,
+				B396575F1D6E9A3B0014E1B2 /* UniStickyHeaderViewController.swift in Sources */,
 				B39657451D6B05590014E1B2 /* CSStickyHeaderFlowLayout.m in Sources */,
 				B396574C1D6BE7AD0014E1B2 /* ItemCell.swift in Sources */,
 				B39657461D6B05590014E1B2 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
